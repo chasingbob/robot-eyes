@@ -1,19 +1,87 @@
-<TimeWidget>:
+<MainTab>:
+    size_hint: 1., 1.
+    do_default_tab: False
+    TabbedPanelItem:
+        text: 'Configure'
+        GridLayout:
+            cols: 3
+            rows: 4
+            row_force_default: True
+            row_default_height: 40
+            spacing: 10, 10
+            padding: 10, 10
 
-    Label:
-        text: root.time
-        color: 0.85,0.85,0.85,1
-        font_size: 35
-        text_size: self.size
-        size_hint: (1,1)
-        pos: root.width - 310, root.top - 70
-        halign: 'left'
-    Label:
-        text: root.date
-        color: 0.85,0.85,0.85,1
-        font_size: 20
-        text_size: self.size
-        size_hint_x: 1.0
-        size: (270,90)
-        pos: root.width - 310, root.top - 110
-        halign: 'left'
+            Label:
+                size_hint: None, None
+                text: 'Data Folder:'
+                halign: 'right'
+                valign: 'center'
+                width: 150
+                height: 35
+            TextInput:
+                id: txt_url
+                height: 35
+                size_hint_x: 1
+                text: ''
+            Button:
+                text:'...'
+                width: 40
+                height: 35
+                halign: 'right'
+                valign: 'center'
+    TabbedPanelItem:
+        text: 'Train'
+        GridLayout:
+            cols: 3
+            rows: 2
+            spacing: 10, 10
+            padding: 10, 10
+
+            GridLayout:
+                cols: 2
+                rows: 4
+                row_force_default: True
+                row_default_height: 40
+                spacing: 10, 10
+                padding: 10, 10
+
+                Label:
+                    size_hint: None, None
+                    text: 'Number of Epochs:'
+                    halign: 'right'
+                    valign: 'center'
+                    width: 150
+                    height: 35
+                TextInput:
+                    id: txt_nbepochs
+                    height: 35
+                    size_hint_x: 1
+                    text: ''
+                
+                Label:
+                    size_hint: None, None
+                    text: 'Batch Size:'
+                    halign: 'right'
+                    valign: 'center'
+                    width: 150
+                    height: 35
+                TextInput:
+                    id: txt_batch_size
+                    height: 35
+                    size_hint_x: 1
+                    text: ''
+                Button:
+                    text:'Train'
+                    width: 40
+                    height: 35
+                    halign: 'right'
+                    valign: 'center'
+
+
+
+            BoxLayout:
+                orientation: "vertical"
+                
+
+
+
